@@ -2,9 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import NextAuthProvider from '../components/utils/NextAuthProvider';
-import { getUnprotectedSession } from '@/helpers/getUnprotectedSession';
-import Link from 'next/link';
-import AuthButton from '@/components/buttons/AuthButton';
+import Header from '@/components/Header';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,20 +16,11 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const session = await getUnprotectedSession();
-
   return (
     <html lang="en">
       <NextAuthProvider>
         <body className={inter.className}>
-          <header className="w-full flex flex-row justify-between items-center h-24 bg-yellow-200 bg-opacity-30 fixed">
-            <div />
-            <Link href="/">Home</Link>
-            {session && <Link href="/my-account">My Account</Link>}
-            <Link href="/protected">This route is protected, try me</Link>
-            <AuthButton session={session} />
-            <div />
-          </header>
+          <Header />
           <div className="h-24 w-full bg-orange-300" />
           {children}
         </body>
