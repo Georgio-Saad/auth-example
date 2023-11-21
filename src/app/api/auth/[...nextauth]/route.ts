@@ -5,12 +5,12 @@ import axios from 'axios';
 
 const googleCallbackUrl = '';
 
-interface SigninResponse {
+export interface SigninResponse {
   user: User;
   token: string;
 }
 
-interface User {
+export interface User {
   id: number;
   profile_photo: string;
   passport: string;
@@ -107,10 +107,10 @@ export const authOptions: AuthOptions = {
     },
     async session({ session, token }) {
       if (token.creds) {
-        session.user = token.creds;
+        session.user = token.creds as User;
         return session;
       }
-      (session as any).user = token.meta;
+      session.user = token.meta as User;
 
       return session;
     },

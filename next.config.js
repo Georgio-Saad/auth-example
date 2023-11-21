@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: { remotePatterns: [{ hostname: 'akaria-backend.hellotree.dev' }] },
   env: {
     GOOGLE_CLIENT_ID:
       '643143283764-p7q9kp32li4bccvko5anudlf4a36sf02.apps.googleusercontent.com',

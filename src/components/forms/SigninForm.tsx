@@ -11,7 +11,7 @@ interface SigninForm {
 
 export default function SigninForm() {
   const { register, handleSubmit } = useForm<SigninForm>({
-    defaultValues: { email: '', password: '' },
+    defaultValues: { email: 'joebadawi9@gmail.com', password: 'joejoejoe' },
   });
 
   const onSubmit = handleSubmit(({ email, password }) => {
