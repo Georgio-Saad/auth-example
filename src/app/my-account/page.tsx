@@ -16,8 +16,6 @@ export default async function MyAccount() {
         <p>{session?.user?.phone}</p>
         <p>{session?.user?.about}</p>
         <p>{session?.user?.country?.title}</p>
-        <p>{session?.user?.birthday}</p>
-        <p>{session?.user?.birthday}</p>
         {session?.user?.profile_photo_path && (
           <Image
             src={
@@ -29,10 +27,6 @@ export default async function MyAccount() {
             height={200}
           />
         )}
-        <p>{session?.user?.birthday}</p>
-        <p>{session?.user?.about}</p>
-        <p>{session?.user?.country?.title}</p>
-        <p>{session?.user?.date_since}</p>
       </section>
     </main>
   );

@@ -13,6 +13,7 @@ export default async function Header() {
       {session && <Link href="/my-account">My Account</Link>}
       <Link href="/protected">Protected</Link>
       <Link href="/un-protected">Public</Link>
+      <Link href="/client-page">Client Page</Link>
       <AuthButton session={session} />
       <div />
     </header>
